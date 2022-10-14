@@ -1,0 +1,19 @@
+@HD	VN:1.0	SO:unsorted
+@PG	ID:GSNAP	PN:gsnap	VN:2017-10-12	CL: cmd
+@SQ	SN:1	LN:195471971
+@SQ	SN:2	LN:182113224
+@SQ	SN:3	LN:160039680
+@SQ	SN:4	LN:156508116
+qname:blah	0	1	5	36	71M	*	0	0	sequence	qualqual
+qname:UMI1	0	1	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI2	0	1	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI2	0	1	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI2	0	2	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI3	0	3	8	36	71M	*	0	0	sequence	qualqual
+qname:UMI3	0	3	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI4	0	4	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI4	4	4	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI8	0	4	38	36	71M	*	0	0	sequence	qualqual
+qname:UMI8	0	4	40	36	2S69M	*	0	0	sequence	qualqual
+qname:UMI9	0	4	50	36	71M	*	0	0	sequence	qualqual
+qname:UMI9	0	4	50	36	71M	*	0	0	sequence	qualqual

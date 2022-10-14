@@ -1,0 +1,85 @@
+#################### PROBLEM STATEMENT ####################
+Remove PCR duplicates from a SAM file, taking clipping into account.
+In addition, remove reads with unknown or incorrect UMIs.
+
+#################### INPUT ####################
+A SAM file, sorted by leftmost coordinates using samtools sort.
+
+#################### OUTPUT ####################
+A SAM file with PCR duplicates removed.
+A stdout statement of the number of duplicates removed.
+
+#################### ALGORITHM ####################
+
+Read in the SAM file one line at a time. Write out header lines.
+
+Once at real alignment lines, split by whitespace into component fields
+
+Pull out important data from the resulting list:
+
+0: QNAME string
+1: Bitwise flag
+2: RNAME Chromosome/ref sequence
+3: Leftmost mapping position
+5: CIGAR string
+9: Sequence
+
+Extract strandedness (flag & 16) from the bitwise flag and save as bool
+Extract UMI (last 8 characters of QNAME) and save as string
+
+Extract soft clipping from CIGAR string
+	Is there an S in the CIGAR string?
+	* I think we're only concerned with leftmost soft clipping, 
+    * in which case search for the first S
+		If yes - extract number before it. could be more than one digit
+		If no - thank goodness. Go to the rest of the algorithm.
+	Adjust leftmost mapping position back by the number before the S
+
+Is the UMI recognized?
+	Compare to list of UMIs used in library prep
+	If the UMI in QNAME is not in the list of known UMIs, do not output read 
+    Increment counter and move to the next line
+
+Is the read a duplicate?
+	Does chromosome number match the previous read?
+		If yes - proceed
+		If no
+			Write out read and exit elif structure
+			Move SAM alignment fields to holder variables
+	Does leftmost mapping position match the previous read?
+		If yes - proceed
+		If no
+			Write out read and exit elif structure
+			Move SAM alignment fields to holder variables
+	Does strand flag match?
+		If yes - proceed
+		If no
+			Write out read and exit elif structure
+			Move SAM alignment fields to holder variables
+	Does UMI match?
+		If yes - increment counter
+            (don't write out anything, and don't overwrite holder variables)
+		If no
+			Write out read and exit elif structure
+			Move SAM alignment fields to holder variables
+
+Repeat loop - move to next line in file
+
+Output number of reads removed
+
+#################### FUNCTIONS ####################
+
+def sam_out(samline: string, outfile: string, samfields: tuple) -> tuple:
+
+    """Writes out SAM record to the output SAM file. Moves saved record 
+    information into holder variables for next line comparison.""" 
+
+    return oldfields
+
+Input: 
+"qname	0	2	76901561	36	71M	*	0	0	GATTACA	1234567	MD:Z:71", 
+"aligned_dupremoved.sam",
+("qname", "0", "2", "76901561", "36", "71M", "*", "0", "0, "GATTACA", "1234567", "MD:Z:71")
+
+Output:
+("qname", "0", "2", "76901561", "36", "71M", "*", "0", "0, "GATTACA", "1234567", "MD:Z:71")
