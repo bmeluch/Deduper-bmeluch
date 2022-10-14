@@ -12,7 +12,7 @@ qname:UMI2	0	2	10	36	71M	*	0	0	sequence	qualqual
 qname:UMI3	0	3	8	36	71M	*	0	0	sequence	qualqual
 qname:UMI3	0	3	10	36	71M	*	0	0	sequence	qualqual
 qname:UMI4	0	4	10	36	71M	*	0	0	sequence	qualqual
-qname:UMI4	4	4	10	36	71M	*	0	0	sequence	qualqual
+qname:UMI4	16	4	10	36	71M	*	0	0	sequence	qualqual
 qname:UMI8	0	4	38	36	71M	*	0	0	sequence	qualqual
 qname:UMI8	0	4	40	36	2S69M	*	0	0	sequence	qualqual
 qname:UMI9	0	4	50	36	71M	*	0	0	sequence	qualqual
