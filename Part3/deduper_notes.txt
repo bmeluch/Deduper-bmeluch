@@ -21,3 +21,13 @@ alignment to step along the query sequence and the reference sequence respective
 • Sum of lengths of the M/I/S/=/X operations shall equal the length of SEQ.
 
 I don't know how people are writing it to use so little memory without a sorted file.
+
+Run the script!
+/projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/slurm/deduper_22787549.err
+
+	Command being timed: "/projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/meluch_deduper.py -f /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/Part3/C1_SE_uniqAlign_sorted.sam -o /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/Part3/C1_SE_uniqAlign_deduped.sam -u /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/STL96.txt"
+	User time (seconds): 77.12
+	System time (seconds): 1.74
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:19.28
+	Maximum resident set size (kbytes): 674372
