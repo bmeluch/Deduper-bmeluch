@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+#SBATCH --job-name=deduper
+#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
+#SBATCH --output=deduper_%j.out
+#SBATCH --error=deduper_%j.err
+#SBATCH --mail-type=END
+#SBATCH --mail-user=bmeluch@uoregon.edu
+
+conda activate bgmp_py310
+
+/usr/bin/time -v /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/meluch_deduper.py \
+-f /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/Part3/C1_SE_uniqAlign_sorted.sam \
+-o /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/Part3/C1_SE_uniqAlign_deduped.sam \
+-u /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/STL96.txt
