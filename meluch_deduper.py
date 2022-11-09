@@ -19,7 +19,7 @@ def pos_adjust(stranded: bool, lmap: int, cig: str) -> int:
         N: int = sum([int(i) for i in re.findall(r'(\d+)N', cig)])
         S: int = 0
         # if there is soft clipping at the end, add that
-        soft = re.search(r'\Z(\d+)S', cig)
+        soft = re.search(r'(\d+)S\Z', cig)
         if soft:
             S = int(soft.group(1))
         return lmap + M + D + N + S

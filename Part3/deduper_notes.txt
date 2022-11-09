@@ -31,3 +31,17 @@ Run the script!
 	Percent of CPU this job got: 99%
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:19.28
 	Maximum resident set size (kbytes): 674372
+
+#################### 08 Nov 2022
+
+Not getting the same total numbers as everyone else
+
+Fixed - strand soft clipping regex - it wasn't picking up the pattern at the end of the string
+Technically the way I have it wouldn't register hard clipping. So if we had a file that considered hard clipping it would have to be changed.
+
+	Command being timed: "/projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/meluch_deduper.py -f /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/Part3/C1_SE_uniqAlign_sorted.sam -o /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/Part3/C1_SE_uniqAlign_deduped.sam -u /projects/bgmp/bmeluch/bioinfo/Bi624/Deduper-bmeluch/STL96.txt"
+	User time (seconds): 78.46
+	System time (seconds): 4.50
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:24.22
+	Maximum resident set size (kbytes): 674368
